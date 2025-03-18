@@ -53,7 +53,7 @@ export const Contact = () => {
               
               <div className="space-y-6">
                 <a 
-                  href="mailto:your.email@example.com" 
+                  href="mailto:sankhajay@gmail.com" 
                   className="flex items-center group"
                 >
                   <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center mr-4">
@@ -61,7 +61,7 @@ export const Contact = () => {
                   </div>
                   <div>
                     <p className="font-medium group-hover:text-primary transition-colors">Email</p>
-                    <p className="text-muted-foreground">your.email@example.com</p>
+                    <p className="text-muted-foreground">sankhajay@gmail.com</p>
                   </div>
                 </a>
                 
@@ -70,7 +70,7 @@ export const Contact = () => {
                   <div className="flex space-x-4">
                     <a 
                       href="#" 
-                      target="_blank" 
+                      target="https://github.com/SankhaJay" 
                       rel="noopener noreferrer"
                       className="w-10 h-10 rounded-full bg-secondary flex items-center justify-center hover:bg-primary/20 transition-colors"
                       aria-label="GitHub"
@@ -79,7 +79,7 @@ export const Contact = () => {
                     </a>
                     <a 
                       href="#" 
-                      target="_blank" 
+                      target="https://www.linkedin.com/in/sankhajay/" 
                       rel="noopener noreferrer"
                       className="w-10 h-10 rounded-full bg-secondary flex items-center justify-center hover:bg-primary/20 transition-colors"
                       aria-label="LinkedIn"
@@ -88,10 +88,10 @@ export const Contact = () => {
                     </a>
                     <a 
                       href="#" 
-                      target="_blank" 
+                      target="https://x.com/SankhaJay" 
                       rel="noopener noreferrer"
                       className="w-10 h-10 rounded-full bg-secondary flex items-center justify-center hover:bg-primary/20 transition-colors"
-                      aria-label="Twitter"
+                      aria-label="X"
                     >
                       <Twitter size={20} className="text-foreground" />
                     </a>
@@ -143,7 +143,7 @@ export const Contact = () => {
                       value={formState.email}
                       onChange={handleChange}
                       className="w-full px-4 py-3 rounded-lg border border-border bg-secondary/30 focus:ring-2 focus:ring-primary/30 focus:border-primary/50 outline-none transition-all"
-                      placeholder="your.email@example.com"
+                      placeholder="Your email"
                     />
                   </div>
                   
@@ -193,7 +193,7 @@ export const Contact = () => {
         
         <div className="mt-20 pt-8 border-t border-border text-center">
           <p className="text-sm text-muted-foreground">
-            &copy; {new Date().getFullYear()} Your Name. All rights reserved.
+            &copy; {new Date().getFullYear()} Sankha Jayalath. All rights reserved.
           </p>
         </div>
       </div>

@@ -12,7 +12,7 @@ import { ThemeProvider } from '@/hooks/useTheme';
 
 const Index = () => {
   useEffect(() => {
-    document.title = 'Your Name | Full-Stack Developer';
+    document.title = 'Sankha Jayalath | Full-Stack Developer';
   }, []);
 
   return (
