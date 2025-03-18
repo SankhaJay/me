@@ -11,7 +11,9 @@ export const ThemeToggle = ({ className }: { className?: string }) => {
       onClick={toggleTheme}
       className={cn(
         "w-10 h-10 rounded-full flex items-center justify-center transition-colors duration-300",
-        theme === 'dark' ? 'bg-secondary text-primary' : 'bg-secondary text-primary',
+        theme === 'dark' 
+          ? "bg-secondary text-primary" 
+          : "bg-secondary text-primary",
         className
       )}
       aria-label="Toggle theme"
