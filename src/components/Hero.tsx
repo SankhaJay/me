@@ -1,5 +1,6 @@
 
 import { ArrowDown } from 'lucide-react';
+import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 
 export const Hero = () => {
   return (
@@ -9,9 +10,10 @@ export const Hero = () => {
     >
       <div className="container mx-auto px-6 z-10">
         <div className="max-w-4xl mx-auto flex flex-col items-center text-center">
-          <div className="inline-block mb-4 px-3 py-1 rounded-full bg-primary/10 border border-primary/20">
-            <span className="text-sm font-medium text-primary">Full-Stack Developer</span>
-          </div>
+          <Avatar className="w-24 h-24 mb-6 border-4 border-primary/20">
+            <AvatarImage src="https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?w=250&h=250&fit=crop" alt="Profile" />
+            <AvatarFallback className="text-lg font-bold">YN</AvatarFallback>
+          </Avatar>
           
           <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-6 tracking-tight animate-fadeIn">
             Hi, I'm <span className="text-gradient animate-gradient-x">Your Name</span> 

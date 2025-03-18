@@ -1,50 +1,50 @@
 
 import { useState } from 'react';
 import { cn } from '@/lib/utils';
+import { Code, Database, Server, Terminal, Wrench } from 'lucide-react';
 
 type Skill = {
   name: string;
-  level: number;
   category: 'frontend' | 'backend' | 'database' | 'devops' | 'tools';
 };
 
 const skills: Skill[] = [
   // Frontend
-  { name: 'React', level: 90, category: 'frontend' },
-  { name: 'JavaScript', level: 95, category: 'frontend' },
-  { name: 'TypeScript', level: 85, category: 'frontend' },
-  { name: 'CSS/SCSS', level: 80, category: 'frontend' },
-  { name: 'HTML', level: 95, category: 'frontend' },
-  { name: 'Redux', level: 80, category: 'frontend' },
-  { name: 'Next.js', level: 75, category: 'frontend' },
-  { name: 'Vue.js', level: 60, category: 'frontend' },
+  { name: 'React', category: 'frontend' },
+  { name: 'JavaScript', category: 'frontend' },
+  { name: 'TypeScript', category: 'frontend' },
+  { name: 'CSS/SCSS', category: 'frontend' },
+  { name: 'HTML', category: 'frontend' },
+  { name: 'Redux', category: 'frontend' },
+  { name: 'Next.js', category: 'frontend' },
+  { name: 'Vue.js', category: 'frontend' },
   
   // Backend
-  { name: 'Node.js', level: 85, category: 'backend' },
-  { name: 'Express', level: 80, category: 'backend' },
-  { name: 'Java', level: 75, category: 'backend' },
-  { name: 'Spring Boot', level: 70, category: 'backend' },
-  { name: 'Python', level: 65, category: 'backend' },
-  { name: 'GraphQL', level: 70, category: 'backend' },
-  { name: 'REST API', level: 90, category: 'backend' },
+  { name: 'Node.js', category: 'backend' },
+  { name: 'Express', category: 'backend' },
+  { name: 'Java', category: 'backend' },
+  { name: 'Spring Boot', category: 'backend' },
+  { name: 'Python', category: 'backend' },
+  { name: 'GraphQL', category: 'backend' },
+  { name: 'REST API', category: 'backend' },
   
   // Database
-  { name: 'MongoDB', level: 80, category: 'database' },
-  { name: 'PostgreSQL', level: 75, category: 'database' },
-  { name: 'MySQL', level: 80, category: 'database' },
-  { name: 'Redis', level: 65, category: 'database' },
+  { name: 'MongoDB', category: 'database' },
+  { name: 'PostgreSQL', category: 'database' },
+  { name: 'MySQL', category: 'database' },
+  { name: 'Redis', category: 'database' },
   
   // DevOps
-  { name: 'Docker', level: 75, category: 'devops' },
-  { name: 'AWS', level: 70, category: 'devops' },
-  { name: 'CI/CD', level: 65, category: 'devops' },
-  { name: 'Git', level: 90, category: 'devops' },
+  { name: 'Docker', category: 'devops' },
+  { name: 'AWS', category: 'devops' },
+  { name: 'CI/CD', category: 'devops' },
+  { name: 'Git', category: 'devops' },
   
   // Tools
-  { name: 'VS Code', level: 95, category: 'tools' },
-  { name: 'Webpack', level: 70, category: 'tools' },
-  { name: 'npm/yarn', level: 85, category: 'tools' },
-  { name: 'Jest', level: 75, category: 'tools' },
+  { name: 'VS Code', category: 'tools' },
+  { name: 'Webpack', category: 'tools' },
+  { name: 'npm/yarn', category: 'tools' },
+  { name: 'Jest', category: 'tools' },
 ];
 
 type Category = 'all' | 'frontend' | 'backend' | 'database' | 'devops' | 'tools';
@@ -52,13 +52,13 @@ type Category = 'all' | 'frontend' | 'backend' | 'database' | 'devops' | 'tools'
 export const Skills = () => {
   const [activeCategory, setActiveCategory] = useState<Category>('all');
   
-  const categories: { value: Category; label: string }[] = [
-    { value: 'all', label: 'All Skills' },
-    { value: 'frontend', label: 'Frontend' },
-    { value: 'backend', label: 'Backend' },
-    { value: 'database', label: 'Database' },
-    { value: 'devops', label: 'DevOps' },
-    { value: 'tools', label: 'Tools' },
+  const categories: { value: Category; label: string; icon: React.ReactNode }[] = [
+    { value: 'all', label: 'All Skills', icon: <Terminal size={16} /> },
+    { value: 'frontend', label: 'Frontend', icon: <Code size={16} /> },
+    { value: 'backend', label: 'Backend', icon: <Server size={16} /> },
+    { value: 'database', label: 'Database', icon: <Database size={16} /> },
+    { value: 'devops', label: 'DevOps', icon: <Terminal size={16} /> },
+    { value: 'tools', label: 'Tools', icon: <Wrench size={16} /> },
   ];
   
   const filteredSkills = activeCategory === 'all' 
@@ -81,34 +81,26 @@ export const Skills = () => {
                   key={category.value}
                   onClick={() => setActiveCategory(category.value)}
                   className={cn(
-                    "px-4 py-2 rounded-lg transition-all whitespace-nowrap",
+                    "px-4 py-2 rounded-lg transition-all whitespace-nowrap flex items-center gap-2",
                     activeCategory === category.value
                       ? "bg-primary text-primary-foreground"
                       : "bg-secondary hover:bg-secondary/80"
                   )}
                 >
+                  {category.icon}
                   {category.label}
                 </button>
               ))}
             </div>
           </div>
           
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-3">
             {filteredSkills.map((skill) => (
               <div
                 key={skill.name}
-                className="glass rounded-xl p-5 transition-all hover:translate-y-[-4px]"
+                className="glass rounded-lg p-3 text-center transition-all hover:bg-primary/10 hover:translate-y-[-4px]"
               >
-                <div className="flex justify-between items-center mb-3">
-                  <h3 className="font-medium">{skill.name}</h3>
-                  <span className="text-sm text-muted-foreground">{skill.level}%</span>
-                </div>
-                <div className="w-full h-2 bg-secondary rounded-full overflow-hidden">
-                  <div
-                    className="h-full bg-primary transition-all duration-1000 ease-out"
-                    style={{ width: `${skill.level}%` }}
-                  />
-                </div>
+                <span className="font-medium">{skill.name}</span>
               </div>
             ))}
           </div>

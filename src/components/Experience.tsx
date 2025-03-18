@@ -8,6 +8,7 @@ type Experience = {
   company: string;
   position: string;
   period: string;
+  years: string;
   location: string;
   description: string;
   achievements: string[];
@@ -19,6 +20,7 @@ const experiences: Experience[] = [
     company: 'CAKE Technologies',
     position: 'Full Stack Developer',
     period: 'Jan 2023 - Present',
+    years: '2023 - Present',
     location: 'San Francisco, CA',
     description: 'Leading development of point-of-sale and analytics systems for restaurant clients.',
     achievements: [
@@ -34,6 +36,7 @@ const experiences: Experience[] = [
     company: 'DIMO',
     position: 'Backend Engineer',
     period: 'Mar 2022 - Dec 2022',
+    years: '2022 - 2022',
     location: 'Austin, TX',
     description: 'Worked on distributed systems for vehicle data management and IoT integration.',
     achievements: [
@@ -49,6 +52,7 @@ const experiences: Experience[] = [
     company: 'Tech Innovators',
     position: 'Junior Developer',
     period: 'Jun 2021 - Feb 2022',
+    years: '2021 - 2022',
     location: 'Remote',
     description: 'Contributed to web application development for diverse client projects.',
     achievements: [
@@ -110,6 +114,9 @@ export const Experience = () => {
                       <p className="text-sm text-muted-foreground">
                         {experience.position}
                       </p>
+                      <p className="text-xs text-muted-foreground/70 mt-1">
+                        {experience.years}
+                      </p>
                     </div>
                   </button>
                 ))}
@@ -127,6 +134,7 @@ export const Experience = () => {
                       <span className="mr-3">{activeExperience.location}</span>
                       <span className="mr-3">•</span>
                       <span>{activeExperience.period}</span>
+                      <span className="ml-2 text-sm">({activeExperience.years})</span>
                     </div>
                   </div>
                   
