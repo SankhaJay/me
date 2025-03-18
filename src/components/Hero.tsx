@@ -16,7 +16,7 @@ export const Hero = () => {
           </Avatar>
           
           <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-6 tracking-tight animate-fadeIn">
-            Hi, I'm <span className="text-gradient animate-gradient-x">Your Name</span> 
+            Hi, I'm <span className="text-gradient animate-gradient-x">Sankha Jayalath</span> 
             <span className="ml-3 inline-block animate-wave origin-bottom-right">👋</span>
           </h1>
           
