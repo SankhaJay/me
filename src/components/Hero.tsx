@@ -1,4 +1,3 @@
-
 import { ArrowDown } from 'lucide-react';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 
@@ -10,8 +9,8 @@ export const Hero = () => {
     >
       <div className="container mx-auto px-6 z-10">
         <div className="max-w-4xl mx-auto flex flex-col items-center text-center">
-          <Avatar className="w-24 h-24 mb-6 border-4 border-primary/20">
-            <AvatarImage src="https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?w=250&h=250&fit=crop" alt="Profile" />
+          <Avatar className="w-40 h-40 mb-6 border-4 border-primary/20">
+            <AvatarImage src="/sankha.jpeg" alt="Sankha Jayalath" />
             <AvatarFallback className="text-lg font-bold">YN</AvatarFallback>
           </Avatar>
           
@@ -21,7 +20,7 @@ export const Hero = () => {
           </h1>
           
           <p className="text-xl md:text-2xl text-muted-foreground mb-10 max-w-2xl animate-slideUp opacity-0" style={{ animationDelay: '0.2s', animationFillMode: 'forwards' }}>
-            I build elegant, responsive, and high-performance web applications with cutting-edge technologies.
+            I build elegant, scalable and high-performance production ready applications with AI and cutting-edge technologies.
           </p>
           
           <div className="flex flex-col sm:flex-row gap-4 animate-slideUp opacity-0" style={{ animationDelay: '0.4s', animationFillMode: 'forwards' }}>
