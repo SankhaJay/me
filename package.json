@@ -1,5 +1,5 @@
 {
-  "homepage": "https://sankhajay.github.io/me",
+  "homepage": ".",
   "name": "vite_react_shadcn_ts",
   "private": true,
   "version": "0.0.0",
@@ -13,7 +13,7 @@
     "lint": "eslint .",
     "preview": "vite preview",
     "start": "serve -s dist",
-    "predeploy": "npm run github-build",
+    "predeploy": "npm run build",
     "deploy": "gh-pages -d dist"
   },
   "dependencies": {
