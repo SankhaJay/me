@@ -7,12 +7,13 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build",
+    "github-build": "vite build --base=./",
     "build:dev": "vite build --mode development",
     "heroku-postbuild": "npm run build",
     "lint": "eslint .",
     "preview": "vite preview",
     "start": "serve -s dist",
-    "predeploy": "npm run build",
+    "predeploy": "npm run github-build",
     "deploy": "gh-pages -d dist"
   },
   "dependencies": {
